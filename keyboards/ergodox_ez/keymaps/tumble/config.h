@@ -11,4 +11,7 @@
 
 #define TAPPING_FORCE_HOLD
 
+#undef MOUSEKEY_TIME_TO_MAX
+#define MOUSEKEY_TIME_TO_MAX 20
+
 #endif

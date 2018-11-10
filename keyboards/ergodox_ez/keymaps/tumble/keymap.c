@@ -8,6 +8,7 @@
 #define GM 2 // locked qwerty layer
 #define LW 3 // lower
 #define RS 4 // raise
+#define MS 5 // mouse
 
 //#define CTLQ LM(QW, 0x01)
 //#define GUIQ LM(QW, 0x08)
@@ -31,18 +32,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_BSPC, KC_A,    KC_S,    KC_H,    KC_T,   KC_G,
         KC_LSFT, KC_Z,    KC_X,    KC_M,    KC_C,   KC_V,   KC_K,
         M(CTLQ), M(GUIQ), M(ALTQ), KC_LSFT, MO(LW),
-                                                    PRSNP,   KC_PGUP,
+                                                        PRSNP,   KC_PGUP,
 	                                       LOCK,    DF(GM),  KC_DEL,
-	                                       SPSH,    M(CTLQ), KC_ENT,
+	                                       M(CTLQ), M(ALTQ), KC_ENT,
         // right hand
              KC_F7,   KC_F8,  KC_F9,   KC_F10,  KC_F11,  KC_F12,   KC_DEL,
              KC_B,    KC_J,   KC_F,    KC_U,    KC_P,    KC_SCLN,  KC_DEL,
                       KC_Y,   KC_N,    KC_E,    KC_O,    KC_I,     KC_QUOT,
              KC_V,    KC_K,   KC_L,    KC_COMM, KC_DOT,  KC_SLSH,  KC_ENT,
-                              MO(RS),  KC_LSFT, KC_RALT, KC_APP,   KC_RCTRL,
+                              MO(RS),  MO(MS),  KC_RALT, KC_APP,   KC_RCTRL,
              KC_PGDN, KC_UP,
              KC_LEFT, KC_DOWN, KC_RIGHT,
-	     KC_BSPC, M(ALTQ), SPSH
+             KC_ESC,  KC_BSPC, SPSH
     ),
 
 [QW] = KEYMAP_80(  
@@ -54,16 +55,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         M(CTLQ),  M(GUIQ), M(ALTQ), KC_LSFT, KC_TRNS,
                                                         PRSNP,   KC_PGUP,
 	                                       LOCK,    DF(WM),  KC_ENT,
-	                                       SPSH,    M(CTLQ), KC_ENT,
+	                                       KC_TRNS, KC_TRNS, KC_TRNS,
         // right hand
              KC_F7,   KC_F8,  KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_DEL,
              KC_T,    KC_Y,   KC_U,    KC_I,    KC_O,    KC_P,    KC_DEL,
                       KC_H,   KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
              KC_B,    KC_N,   KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
-                              KC_TRNS, KC_LSFT, KC_RALT, KC_APP,  KC_RCTRL,
+                              KC_TRNS, KC_TRNS, KC_RALT, KC_APP,  KC_RCTRL,
              KC_PGDN, KC_UP,
              KC_LEFT, KC_DOWN, KC_RIGHT,
-	     KC_BSPC, M(ALTQ), SPSH
+	     KC_TRNS, KC_TRNS, KC_TRNS
     ),
 
 [GM] = KEYMAP_80(  
@@ -72,19 +73,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,       KC_Q,   KC_W,   KC_E,     KC_R,    KC_T,    KC_Y,
         KC_BSPC,      KC_A,   KC_S,   KC_D,     KC_F,    KC_G,	 
         KC_LSFT,      KC_Z,   KC_X,   KC_C,     KC_V,    KC_B,    KC_N,
-        KC_LCTRL,     KC_X,   KC_LALT,KC_LSFT,  KC_LCTL,
+        KC_LCTRL,     KC_X,   KC_LALT,KC_LALT,  KC_SPC,
                                                          PRSNP,   KC_PGUP,
 	                                        LOCK,    DF(WM),  KC_ENT,
-	                                        KC_SPC,  M(CTLQ), KC_ENT,
+	                                        KC_TRNS, KC_TRNS, KC_TRNS,
         // right hand
              KC_F7,   KC_F8,  KC_F9,   KC_F10,  KC_F11,  KC_F12,   KC_DEL,
              KC_T,    KC_Y,   KC_U,    KC_I,    KC_O,    KC_P,     KC_DEL,
                       KC_H,   KC_J,    KC_K,    KC_L,    KC_SCLN,  KC_QUOT,
              KC_B,    KC_N,   KC_M,    KC_COMM, KC_DOT,  KC_SLSH,  KC_ENT,
-                              KC_LALT, KC_LSFT, KC_RALT, KC_APP,   KC_RCTRL,
+                              KC_LALT, KC_TRNS, KC_RALT, KC_APP,   KC_RCTRL,
              KC_PGDN, KC_UP,
              KC_LEFT, KC_DOWN, KC_RIGHT,
-	     KC_BSPC, M(ALTQ), SPSH
+	     KC_TRNS, KC_TRNS, KC_TRNS
     ),
 [LW] = KEYMAP_80(
        // left hand
@@ -95,7 +96,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                                                         PRSNP,   KC_PGUP,
 	                                       LOCK,    DF(WM),  KC_ENT,
-	                                       SPSH,    M(CTLQ), KC_ENT,
+	                                       KC_TRNS, KC_TRNS, KC_TRNS,
        // right hand
        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
        XXXXXXX, XXXXXXX, KC_7,    KC_8,    KC_9,    KC_0,    KC_TRNS,
@@ -104,7 +105,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                          KC_END,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
              KC_PGDN, KC_UP,
              KC_LEFT, KC_DOWN, KC_RIGHT,
-	     KC_BSPC, M(ALTQ), SPSH
+	     KC_TRNS, KC_TRNS, KC_TRNS
 ),
 
 [RS] = KEYMAP_80(
@@ -115,7 +116,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_HOME,
                                                         PRSNP,   KC_PGUP,
 	                                       LOCK,    DF(WM),  KC_ENT,
-	                                       SPSH,    M(CTLQ), KC_ENT,
+	                                       KC_TRNS, KC_TRNS, KC_TRNS,
     // right hand
        KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
        XXXXXXX,  XXXXXXX, KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_TRNS,
@@ -124,7 +125,27 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                           KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
              KC_PGDN, KC_UP,
              KC_LEFT, KC_DOWN, KC_RIGHT,
-	     KC_BSPC, M(ALTQ), SPSH
+	     KC_TRNS, KC_TRNS, KC_TRNS
+),
+
+[MS] = KEYMAP_80(
+       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+       KC_TRNS, XXXXXXX, XXXXXXX, KC_MS_U, XXXXXXX, XXXXXXX, XXXXXXX,
+       KC_CAPS, XXXXXXX, KC_MS_L, KC_MS_D, KC_MS_R, XXXXXXX,
+       KC_TRNS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_HOME,
+                                                        PRSNP,   KC_PGUP,
+	                                       LOCK,    DF(WM),  KC_ENT,
+	                                       KC_TRNS, KC_TRNS, KC_TRNS,
+    // right hand
+       KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+       XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_TRNS,
+                 XXXXXXX, KC_BTN1, KC_BTN2, XXXXXXX, XXXXXXX, XXXXXXX,
+       XXXXXXX,  XXXXXXX, KC_WH_U, KC_WH_D, XXXXXXX, XXXXXXX, KC_TRNS,
+                          KC_END,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+             KC_PGDN, KC_UP,
+             KC_LEFT, KC_DOWN, KC_RIGHT,
+	     KC_TRNS, KC_TRNS, KC_TRNS
 )
 };
 /*

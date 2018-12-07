@@ -69,7 +69,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,                            xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     _______, xxxxxxx, xxxxxxx, KC_UP,   xxxxxxx, xxxxxxx,                            xxxxxxx, KC_F9,   KC_F10,  KC_F11,  KC_F12,  _______,
+     KC_GRV,  xxxxxxx, xxxxxxx, KC_UP,   xxxxxxx, xxxxxxx,                            xxxxxxx, KC_F9,   KC_F10,  KC_F11,  KC_F12,  _______,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      _______, xxxxxxx, KC_LEFT, KC_DOWN, KC_RGHT, xxxxxxx,                            xxxxxxx, KC_F5,   KC_F6,   KC_F7,   KC_F8,   xxxxxxx,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
@@ -83,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,                            xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     _______, xxxxxxx, xxxxxxx, KC_MS_U, xxxxxxx, xxxxxxx,                            xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______,
+     KC_TAB,  xxxxxxx, xxxxxxx, KC_MS_U, xxxxxxx, xxxxxxx,                            xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, _______,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      _______, xxxxxxx, KC_MS_L, KC_MS_D, KC_MS_R, xxxxxxx,                            xxxxxxx, KC_BTN1, KC_BTN2, xxxxxxx, xxxxxxx, xxxxxxx,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤

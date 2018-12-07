@@ -31,9 +31,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      KC_BSPC, KC_A,    KC_S,    KC_H,    KC_T,    KC_G,                               KC_Y,    KC_N,    KC_E,    KC_O,    KC_I,    KC_QUOT,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_LSFT, KC_Z,    KC_X,    KC_M,    KC_C,    KC_V,    ALTQ,             KC_ESC,  KC_K,    KC_L,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
+     KC_LSFT, KC_Z,    KC_X,    KC_M,    KC_C,    KC_V,    M(ALTQ),          KC_ESC,  KC_K,    KC_L,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                    GUIQ,    MO(_LW), CTLQ,                      SPSH,    MO(_RS), MO(_MS)
+                                    M(GUIQ), MO(_LW), M(CTLQ),                   SPSH,    MO(_RS), MO(_MS)
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   ),
 
@@ -112,39 +112,49 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
 {
-  // MACRODOWN only works in this function
-      switch(id) {
-      case CTLQ:
-	if (record->event.pressed) {
-        register_code(KC_LCTRL);
-        layer_on(1);
-      } else {
-        layer_off(1);
-        unregister_code(KC_LCTRL);
+   // MACRODOWN only works in this function
+   switch (id)
+   {
+   case CTLQ:
+      if (record->event.pressed)
+      {
+         register_code(KC_LCTRL);
+         layer_on(1);
+      }
+      else
+      {
+         layer_off(1);
+         unregister_code(KC_LCTRL);
       }
       return false;
       break;
-      case GUIQ:
-	if (record->event.pressed) {
-        register_code(KC_LGUI);
-        layer_on(1);
-      } else {
-        layer_off(1);
-        unregister_code(KC_LGUI);
+   case GUIQ:
+      if (record->event.pressed)
+      {
+         register_code(KC_LGUI);
+         layer_on(1);
+      }
+      else
+      {
+         layer_off(1);
+         unregister_code(KC_LGUI);
       }
       return false;
       break;
-      
-      case ALTQ:
-	if (record->event.pressed) {
-        register_code(KC_LALT);
-        layer_on(1);
-      } else {
-        layer_off(1);
-        unregister_code(KC_LALT);
+
+   case ALTQ:
+      if (record->event.pressed)
+      {
+         register_code(KC_LALT);
+         layer_on(1);
+      }
+      else
+      {
+         layer_off(1);
+         unregister_code(KC_LALT);
       }
       return false;
       break;
-      }
-    return MACRO_NONE;
+   }
+   return MACRO_NONE;
 };

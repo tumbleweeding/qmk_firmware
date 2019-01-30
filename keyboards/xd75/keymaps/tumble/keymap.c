@@ -35,8 +35,12 @@
 #define SPSH MT(MOD_LSFT, KC_SPC)
 #define ENSH MT(MOD_RSFT, KC_ENT)
 #define LOCK LGUI(KC_L)
-#define CTLQ LM(_QW, 0x01)
-#define GUIQ LM(_QW, 0x08)
+//#define CTLQ LM(_QW, 0x01)
+//#define GUIQ LM(_QW, 0x08)
+
+#define CTLQ M(0)
+#define GUIQ M(1)
+#define ALTQ M(2)
 
 #define RED		0
 #define YELLOW	60
@@ -77,7 +81,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	{ KC_TAB,     KC_Q,     KC_D,     KC_R,     KC_W,     KC_B,     KC_J,     KC_F,     KC_U,     KC_P,     KC_SCLN,  KC_DEL,   TG(_GM),  LOCK,     PRSNP    },
 	{ KC_BSPC,    KC_A,     KC_S,     KC_H,     KC_T,     KC_G,     KC_Y,     KC_N,     KC_E,     KC_O,     KC_I,     KC_QUOT,  XXXXXXX,  KC_ENT,   KC_ENT   },
 	{ KC_LSFT,    KC_Z,     KC_X,     KC_M,     KC_C,     KC_V,     KC_K,     KC_L,     KC_COMM,  KC_DOT,   KC_SLSH,  KC_ENT,   KC_RSFT,  KC_UP,    XXXXXXX  },
-	{ CTLQ,       GUIQ,     KC_LALT,  KC_PGUP,  LWHM,     KC_SPC,     SPSH,     RSED,   KC_PGDN,  KC_RALT,  KC_APP,   KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT  }
+	{ CTLQ,       GUIQ,     ALTQ,     KC_PGUP,  LWHM,     KC_SPC,   SPSH,     RSED,     KC_PGDN,  KC_RALT,  KC_APP,   KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT  }
 },
 
   /* QWERTY - MIT ENHANCED / GRID COMPATIBLE
@@ -99,7 +103,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     { KC_TAB,     KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_DEL,   XXXXXXX,  LOCK,     PRSNP    },
     { KC_BSPC,    KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,  XXXXXXX,  KC_ENT,   KC_ENT   },
     { KC_LSFT,    KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  KC_ENT,   KC_RSFT,  KC_UP,    XXXXXXX  },
-    { _______,    _______,  KC_LALT,  KC_PGUP,  LWHM,     KC_SPC,   SPSH,     RSED,     KC_PGDN,  KC_RALT,  KC_APP,   KC_RCTRL, KC_LEFT,  KC_DOWN,  KC_RGHT  },
+    { _______,    _______,  _______,  KC_PGUP,  LWHM,     KC_SPC,   SPSH,     RSED,     KC_PGDN,  KC_RALT,  KC_APP,   KC_RCTRL, KC_LEFT,  KC_DOWN,  KC_RGHT  },
    },
 
    /* QWERTY - for gaming
@@ -121,7 +125,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		{ KC_TAB,     KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_DEL,   TG(_GM),  LOCK,     PRSNP   },
 		{ KC_BSPC,    KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,  XXXXXXX,  KC_ENT,   KC_ENT  },
 		{ KC_LSFT,    KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  KC_ENT,   KC_RSFT,  KC_UP,    XXXXXXX },
-		{ KC_LCTL,    KC_X,     KC_LALT,  KC_PGUP,  LWHM,     KC_SPC,   SPSH,     RSED,     KC_PGDN,  KC_RALT,  KC_APP,   KC_RCTRL, KC_LEFT,  KC_DOWN,  KC_RGHT },
+		{ KC_LCTL,    KC_X,     KC_LALT,  KC_LALT,  KC_SPC,   KC_SPC,   SPSH,     RSED,     KC_END,   KC_RALT,  KC_APP,   KC_RCTRL, KC_LEFT,  KC_DOWN,  KC_RGHT },
 },
 
    /* LOWERED
@@ -143,7 +147,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	  { KC_GRV,   XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  KC_7,     KC_8,     KC_9,     KC_0,     _______,  XXXXXXX,  XXXXXXX,  _______  },
 	  { _______,  XXXXXXX,  KC_BSLS,  KC_MINS,  KC_EQL,   XXXXXXX,  XXXXXXX,  KC_4,     KC_5,     KC_6,     XXXXXXX,  _______,  XXXXXXX,  _______,  _______  },
       { _______,  XXXXXXX,  XXXXXXX,  KC_LBRC,  KC_RBRC,  XXXXXXX,  KC_0,     KC_1,     KC_2,     KC_3,     _______,  KC_ENT,   _______,  _______,  XXXXXXX  },
-      { _______,  _______,  _______,  _______,  LWHM,     _______,  _______,  KC_END,   _______,  _______,  _______,  _______,  _______,  _______,  _______  },
+      { CTLQ,        GUIQ,     ALTQ,  _______,  LWHM,     _______,  _______,  KC_END,   _______,  _______,  _______,  _______,  _______,  _______,  _______  },
      },
 
     /* RAISED
@@ -311,6 +315,17 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
 		{
 			layer_off(_QW);
 			unregister_code(KC_LGUI);
+		}
+		break;
+	case 2:
+		if (record->event.pressed) {
+			layer_on(_QW);
+			register_code(KC_LALT);
+		}
+		else
+		{
+			layer_off(_QW);
+			unregister_code(KC_LALT);
 		}
 	}
 	return MACRO_NONE;

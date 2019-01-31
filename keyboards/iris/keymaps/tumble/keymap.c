@@ -14,21 +14,22 @@ enum custom_keycodes {
     CTLQ = 0,
     GUIQ,
     ALTQ,
-    DYNAMIC_MACRO_RANGE,
+    // DYNAMIC_MACRO_RANGE,
 };
 
-#include "dynamic_macro.h"
+// #define DYNAMIC_MACRO_SIZE 128
+// #include "dynamic_macro.h"
 
 #define _______ KC_TRNS
 #define xxxxxxx KC_NO
 
 #define SPSH MT(MOD_LSFT, KC_SPC)
 
-#define MR1 DYN_REC_START1
-#define MR2 DYN_REC_START2
-#define MP1 DYN_MACRO_PLAY1
-#define MP2 DYN_MACRO_PLAY2
-#define MST DYN_REC_STOP
+// #define MR1 DYN_REC_START1
+// #define MR2 DYN_REC_START2
+// #define MP1 DYN_MACRO_PLAY1
+// #define MP2 DYN_MACRO_PLAY2
+// #define MST DYN_REC_STOP
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -64,7 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
      xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,                            xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     _______, MR1,     MR2,     MP1,     MP2,     MST,                                xxxxxxx, KC_7,    KC_8,    KC_9,    KC_0,    _______,
+     _______, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx,                            xxxxxxx, KC_7,    KC_8,    KC_9,    KC_0,    _______,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      _______, xxxxxxx, KC_BSLS, KC_MINS, KC_EQL,  xxxxxxx,                            xxxxxxx, KC_4,    KC_5,    KC_6,    xxxxxxx, xxxxxxx,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
@@ -114,9 +115,9 @@ void persistent_default_layer_set(uint16_t default_layer) {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  if (!process_record_dynamic_macro(keycode, record)) {
+  /*if (!process_record_dynamic_macro(keycode, record)) {
     return false;
-  }
+  }*/
   switch (keycode) {
   }
   return true;

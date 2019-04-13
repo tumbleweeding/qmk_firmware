@@ -31,6 +31,10 @@ extern keymap_config_t keymap_config;
 
 #define SPSH MT(MOD_LSFT, KC_SPC)
 
+#define CQ M(CTLQ)
+#define GQ M(GUIQ)
+#define AQ M(ALTQ)
+
 enum custom_keycodes {
     CTLQ = 0,
     GUIQ,
@@ -65,8 +69,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_BSPC, KC_A,  KC_S,   KC_H,   KC_T,   KC_G,               KC_Y,   KC_N,   KC_E,   KC_O,   KC_I,   KC_QUOT,   \
     KC_LSFT, KC_Z,  KC_X,   KC_M,   KC_C,   KC_V,               KC_K,   KC_L,   KC_COMM,KC_DOT, KC_SLSH,KC_ENT,    \
                     KC_LEFT,KC_RIGHT,                                            KC_UP, KC_DOWN,                   \
-                                    LW,     CTLQ,               SPSH,   RS,                                        \
-                                    ALTQ,   GUIQ,               KC_ESC, MS,                                        \
+                                    LW,     CQ,                 SPSH,   RS,                                        \
+                                    AQ,     GQ,                 KC_ESC, MS,                                        \
                                     KC_ENT, KC_ESC,             KC_ENT, KC_BSPC                                    \
 ),
 
@@ -85,14 +89,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,xxxxxxx,KC_BSLS,KC_MINS,KC_EQL, xxxxxxx,            xxxxxxx,KC_4,   KC_5,   KC_6,   xxxxxxx,xxxxxxx,   \
     _______,xxxxxxx,xxxxxxx,KC_LBRC,KC_RBRC,xxxxxxx,            KC_0,   KC_1,   KC_2,   KC_3,   xxxxxxx,_______,   \
                     _______,_______,                                            _______,_______,                   \
-                                    _______,_______,            _______,KC_END,                                    \
-                                    _______,_______,            _______,_______,                                   \
+                                    _______,KC_LCTRL,           _______,KC_END,                                    \
+                                    KC_LALT,KC_LGUI,            _______,_______,                                   \
                                     _______,_______,            _______,_______                                    \
 ),
 
 [_RS] = LAYOUT(
     xxxxxxx,xxxxxxx,xxxxxxx,KC_UP,  xxxxxxx,xxxxxxx,            xxxxxxx,KC_F9,  KC_F10, KC_F11, KC_F12, _______,   \
-    _______,xxxxxxx,KC_LEFT,KC_DOWN,KC_RGHT,xxxxxxx,            xxxxxxx,KC_F5,  KC_F6,  KC_F7,  KC_F8,  xxxxxxx,   \
+    KC_CAPS,xxxxxxx,KC_LEFT,KC_DOWN,KC_RGHT,xxxxxxx,            xxxxxxx,KC_F5,  KC_F6,  KC_F7,  KC_F8,  xxxxxxx,   \
     _______,xxxxxxx,xxxxxxx,xxxxxxx,xxxxxxx,xxxxxxx,            xxxxxxx,KC_F1,  KC_F2,  KC_F3,  KC_F4,  _______,   \
                     _______,_______,                                            _______,_______,                   \
                                     KC_HOME,_______,            _______,RS,                                        \
@@ -102,7 +106,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_MS] = LAYOUT(
     xxxxxxx,xxxxxxx,xxxxxxx,KC_MS_U,xxxxxxx,xxxxxxx,            xxxxxxx,xxxxxxx,xxxxxxx,xxxxxxx,xxxxxxx,_______,   \
-    _______,xxxxxxx,KC_MS_L,KC_MS_D,KC_MS_R,xxxxxxx,            xxxxxxx,KC_BTN1,KC_BTN2,xxxxxxx,xxxxxxx,xxxxxxx,   \
+    KC_BSPC,xxxxxxx,KC_MS_L,KC_MS_D,KC_MS_R,xxxxxxx,            xxxxxxx,KC_BTN1,KC_BTN2,xxxxxxx,xxxxxxx,xxxxxxx,   \
     _______,xxxxxxx,xxxxxxx,xxxxxxx,xxxxxxx,xxxxxxx,            xxxxxxx,KC_WH_U,KC_WH_D,xxxxxxx,xxxxxxx,_______,   \
                     _______,_______,                                            _______,_______,                   \
                                     _______,KC_LCTL,            _______,_______,                                   \

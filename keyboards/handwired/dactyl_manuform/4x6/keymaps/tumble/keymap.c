@@ -90,7 +90,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,xxxxxxx,xxxxxxx,KC_LBRC,KC_RBRC,xxxxxxx,            KC_0,   KC_1,   KC_2,   KC_3,   xxxxxxx,_______,   \
                     _______,_______,                                            _______,_______,                   \
                                     _______,KC_LCTRL,           _______,KC_END,                                    \
-                                    KC_LALT,KC_LGUI,            _______,_______,                                   \
+                                    KC_LALT,KC_LGUI,            KC_APP, _______,                                   \
                                     _______,_______,            _______,_______                                    \
 ),
 
@@ -100,7 +100,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,xxxxxxx,xxxxxxx,xxxxxxx,xxxxxxx,xxxxxxx,            xxxxxxx,KC_F1,  KC_F2,  KC_F3,  KC_F4,  _______,   \
                     _______,_______,                                            _______,_______,                   \
                                     KC_HOME,_______,            _______,RS,                                        \
-                                    _______,_______,            _______,_______,                                   \
+                                    _______,_______,            KC_ESC, _______,                                   \
                                     _______,_______,            _______,_______                                    \
 ),
 
